@@ -1,0 +1,184 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.c-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-size: contain;
+
+  @media (min-width: $bp-lg) {
+    justify-content: center;
+  }
+
+  .c-banner__img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  .c-banner__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .c-banner__info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    --bs-gutter-x: 0px;
+  }
+
+  .c-banner__controls {
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 14px;
+    margin-top: 12px;
+
+    .col-auto {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+//Default
+
+.c-banner_default {
+  color: $color-white;
+  border-radius: $radius-secondary;
+
+  .c-banner__info-title {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 49px;
+  }
+
+  .c-banner__info-desc {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &.c-banner_large {
+    background: $color-white;
+    min-height: 380px;
+  }
+
+
+  .c-banner__info {
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .c-btn_banner {
+    padding: 14px 10px;
+  }
+}
+
+//Small
+
+.c-banner_small {
+  background-color: $color-white;
+  height: 541px;
+
+  .c-banner__info-title {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .c-banner__info-desc {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .c-banner__info {
+    padding: 30px 20px;
+  }
+
+  .c-btn_banner {
+    padding: 14px 10px;
+  }
+}
+
+/**
+* Xs
+*/
+
+@media (min-width: $bp-xs) {
+  
+}
+
+/**
+* Md
+*/
+
+@media (max-width: $bp-md - 1) {
+  .banner__recomended {
+    --bs-gutter-y: 15px;
+  }
+}
+
+@media (min-width: $bp-md) {
+
+  .banner__recomended {
+    --bs-gutter-x: 28px;
+  }
+
+  .c-banner_default {
+    &.c-banner_large {
+      min-height: 408px;
+    }
+  }
+  
+}
+
+/**
+* Lg
+*/
+
+@media (min-width: $bp-lg) {
+  
+}
+
+/**
+* Xl
+*/
+
+@media (min-width: $bp-xl) {
+  .c-banner-block {
+    display: grid;
+    grid-template-columns: 1fr 243px;
+  }
+
+  .banner__recomended {
+    --bs-gutter-y: 20px;
+
+    .product-card__item {
+      padding: 0 10px;
+    }
+  }
+
+  .banner-block__recomended {
+    .product-card__item {
+      padding: 0;
+    }
+  }
+
+  .c-banner_default {
+    &.c-banner_large {
+      min-height: 682px;
+    }
+  }
+}

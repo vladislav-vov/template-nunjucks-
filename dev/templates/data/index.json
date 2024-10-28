@@ -1,0 +1,245 @@
+{
+  "bannerArr": [
+    {
+      "title": [
+        "Ни искры",
+        "и огонёчка"
+      ],
+      "button1": "Перейти в каталог книг",
+      "button2": "Узнать о библиотеке",
+      "img": [
+        "/images/banner-xs.jpeg",
+        "/images/banner.jpeg"
+      ]
+    }
+  ],
+  "recomendedArr": [
+    {
+      "img": "Домкрат.jpeg",
+      "title": "Домкрат кабельный винтовой ДК-5 (2 Стойки+ось)",
+      "count": {
+        "color": "#0E960C",
+        "text": "Много"
+      },
+      "cost": "32 868 руб.",
+      "attr": {
+        "icon": "cart",
+        "canceler": " svg-ico_no_stroke",
+        "dailyDeal": [
+          {
+            "text": "Товар дня",
+            "color": "#05B154"
+          },
+          {
+            "text": "Самый продаваемый",
+            "color": "blue"
+          }
+        ],
+        "col": "col-12 col-sm-6 col-xl-12"
+      }
+    },
+    {
+      "img": "Домкрат.jpeg",
+      "title": "Домкрат кабельный винтовой ДК-5 (2 Стойки+ось)",
+      "count": {
+        "color": "#0E960C",
+        "text": "Много"
+      },
+      "cost": "32 868 руб.",
+      "attr": {
+        "icon": "cart",
+        "canceler": " svg-ico_no_stroke",
+        "dailyDeal": [
+          {
+            "text": "Новинка",
+            "color": "#C70A0A"
+          }
+        ],
+        "col":"col-12 col-sm-6 col-xl-12"
+      }
+    }
+  ],
+  "productArr": [
+    {
+      "img": "Домкрат.jpeg",
+      "title": "Домкрат кабельный винтовой ДК-5 (2 Стойки+ось)",
+      "count": {
+        "color": "#0E960C",
+        "text": "Много"
+      },
+      "cost": "32 868 руб.",
+      "attr": {
+        "className": "pt-0",
+        "col": "col-12 col-sm-6 col-md-4 col-xl-2",
+        "icon": "cart",
+        "canceler": " svg-ico_no_stroke"
+      }
+    },
+    {
+      "img": "Плита.jpeg",
+      "title": "Плита ПЗК 240х480х16",
+      "count": {
+        "color": "#0E960C",
+        "text": "Много"
+      },
+      "cost": "78 руб.",
+      "attr": {
+        "col": "col-12 col-sm-6 col-md-4 col-xl-2",
+        "icon": "cart",
+        "canceler": " svg-ico_no_stroke"
+      }
+    },
+    {
+      "img": "УКПТ.jpeg",
+      "title": "УКПТ 175/55/300 (Скала)",
+      "count": {
+        "color": "#0E960C",
+        "text": "Много"
+      },
+      "cost": "496.32 руб.",
+      "attr": {
+        "className": "p-0 border-0",
+        "col": "col-12 col-sm-6 col-md-4 col-xl-2",
+        "icon": "cart",
+        "canceler": " svg-ico_no_stroke"
+      }
+    },
+    {
+      "img": "Ролик.jpeg",
+      "title": "Прямой кабельный ролик РКС1/120",
+      "count": {
+        "color": "#0E960C",
+        "text": "Много"
+      },
+      "cost": "2 828.40 руб. руб.",
+      "attr": {
+        "className": "p-0 border-0",
+        "col": "col-12 col-sm-6 col-md-4 col-xl-2",
+        "icon": "cart",
+        "canceler": " svg-ico_no_stroke"
+      }
+    },
+    {
+      "img": "Горелка.jpeg",
+      "title": "Горелка газовоздушная для монтажа кабельных муфт ГВ 3-1",
+      "count": {
+        "color": "#0E960C",
+        "text": "Много"
+      },
+      "cost": "5 999.05 руб.",
+      "attr": {
+        "col": "col-12 col-sm-6 col-md-4 col-xl-2",
+        "icon": "cart",
+        "canceler": " svg-ico_no_stroke"
+      }
+    },
+    {
+      "img": "Комплект.jpeg",
+      "title": "Комплект клеммников для сетей уличного освещения Н...",
+      "count": {
+        "color": "#0E960C",
+        "text": "Много"
+      },
+      "cost": "999.60 руб.",
+      "attr": {
+        "col": "col-12 col-sm-6 col-md-4 col-xl-2",
+        "icon": "cart",
+        "canceler": " svg-ico_no_stroke"
+      }
+    }
+  ],
+  "categoryArr": [
+    {
+      "title": "Защита кабеля в земле",
+      "text": "Воздушные линии электропередач не всегда являются удобными, особенно ес...",
+      "img": "Защита-кабеля.jpeg",
+      "attr": {
+        "col": "col-12 col-sm-6 col-xl-3"
+      }
+    },
+    {
+      "title": "Кабельные ролики",
+      "text": "Прокладка длинного тяжелого кабеля требует довольно высоких усилий, поэт...",
+      "img": "Кабельные-ролики.jpeg",
+      "attr": {
+        "col": "col-12 col-sm-6 col-xl-3"
+      }
+    },
+    {
+      "title": "Кабельные соединители",
+      "text": "Длина кабельной бухты не всегда достаточна для кабельной линии, поэто...",
+      "img": "Кабельные-соединители.jpeg",
+      "attr": {
+        "col": "col-12 col-sm-6 col-xl-3"
+      }
+    },
+    {
+      "title": "Кабельные чулки",
+      "text": "Кабельный чулок применяется для протяжки кабеля через тоннели, коллект...",
+      "img": "Кабельные-чулки.jpeg",
+      "attr": {
+        "col": "col-12 col-sm-6 col-xl-3"
+      }
+    }
+  ],
+  "informationArr": [
+    {
+      "title": "Защита кабеля в земле",
+      "img": "Защита-кабеля-1.jpeg",
+      "attr": {
+        "col": "col-12 col-sm-6 col-xl-3",
+        "m": "mb-md-2 mb-xl-0"
+      }
+    },
+    {
+      "title": "Самые распространенные ошибки при монтаже соединительных муфт",
+      "img": "Ошибки.jpeg",
+      "attr": {
+        "col": "col-12 col-sm-6 col-xl-3",
+        "m": "mb-md-2 mb-xl-0"
+      }
+    },
+    {
+      "title": "УЗК: все хитрости выбора",
+      "img": "УЗК.jpeg",
+      "attr": {
+        "col": "col-12 col-sm-6 col-xl-3"
+      }
+    },
+    {
+      "title": "Наконечники под опрессовку стандарта DIN",
+      "img": "Наконечники.jpeg",
+      "attr": {
+        "col": "col-12 col-sm-6 col-xl-3"
+      }
+    }
+  ],
+  "newsArr": [
+    {
+      "data": "30.05.2023",
+      "title": "Комплект клеммников НК 15 для опор освещения по сверхнизкой цене",
+      "text": "С 30 мая 2023 года отдаем комплект клеммников НК-15 по себестоимости.",
+      "attr": {
+        "col": "col-xl-4",
+        "m": "mb-md-2 mb-xl-0"
+      }
+    },
+    {
+      "data": "08.02.2023",
+      "title": "Новая кабельная горелка",
+      "text": "В наличии на складе оптимальная горелка для кабельных муфт. Три насадки, редуктор, функциональный кейс.",
+      "attr": {
+        "col": "col-xl-4",
+        "m": "mb-md-2 mb-xl-0"
+      }
+    },
+    {
+      "data": "24.05.2022",
+      "title": "И снова снижение цен!!!",
+      "text": "Бирки Домиком, Бирки У135М стоят дешевле чем в январе 2022!",
+      "attr": {
+        "col": "col-xl-4"
+      }
+    }
+  ]
+}

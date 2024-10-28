@@ -1,0 +1,111 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.category-card {
+  background: $color-light_gray;
+  border-radius: $radius-primary;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.category-card__text-block {
+  padding: 14px 16px 23px 16px;
+}
+
+.text-block__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  padding-bottom: 3px;
+}
+
+
+.text-block__desc {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  padding-top: 2px;
+  max-height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.category-card__thumb {
+  flex: 0 0 auto;
+  overflow: hidden;
+  max-width: 100%;
+  position: relative;
+  display: block;
+  margin-top: auto;
+
+  &::after {
+    content: "";
+    position: relative;
+    display: block;
+    padding-top: math.div(229px, 325px) * 100%;
+    background: linear-gradient(180.00deg, rgb(241, 245, 247), rgba(241, 245, 247, 0) 100%);
+  }
+}
+
+.category-card__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin: auto;
+  max-height: 100%;
+  width: 100%;
+}
+
+/**
+* Md
+*/
+
+@media (min-width: $bp-md) {
+  .text-block__title {
+    font-size: 20px;
+    line-height: 26px;
+    padding-bottom: 4px;
+  }
+
+  .text-block__desc {
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 3px;
+    max-height: 39px;
+  }
+}
+
+/**
+* Xl
+*/
+
+@media (min-width: $bp-xl) {
+  .category-card__text-block {
+    padding: 20px 20px 34px 20px;
+
+    .text-block__title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      padding-bottom: 4px;
+    }
+
+    .text-block__desc {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      padding-top: 4px;
+      max-height: 36px;
+    }
+  }
+}

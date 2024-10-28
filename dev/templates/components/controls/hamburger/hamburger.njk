@@ -1,0 +1,13 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default(params) %}
+
+  <div class="c-wrapper__hamburger {{ params.wrapperName }}">
+    <button class="hamburger {{ params.className }}" type="button" data-popup-toggle="{{ params.toggleName }}">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+
+{% endmacro %}

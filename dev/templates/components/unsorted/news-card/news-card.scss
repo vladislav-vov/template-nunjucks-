@@ -1,0 +1,80 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.news-card__btn {
+  justify-content: left;
+  width: fit-content;
+}
+
+.news-card {
+  padding: 16px 20px;
+  background: $color-light_gray;
+  border-radius: $radius-primary;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card__data, .news-card__text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.news-card__data {
+  padding-bottom: 4px;
+  color: $color-medium_gray;
+}
+
+.news-card__text {
+  padding: 4px 0;
+}
+
+.news-card__title {
+  padding: 4px 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: $color-black;
+}
+
+.news-card__more-btn {
+  padding-top: 4px;
+}
+
+/**
+* Md
+*/
+
+@media (min-width: $bp-md) {
+  .news-card__data, .news-card__text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .news-card__title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+/**
+* Xl
+*/
+
+@media (min-width: $bp-xl) {
+  .news-card__data, .news-card__text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .news-card__title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}

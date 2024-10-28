@@ -1,0 +1,50 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default(array, params) %}
+
+  <div class="product-card__item {{ array.attr.col }} {{ array.attr.itemClassName }}" {% if params.Type === "product" %} data-card="{{ params.loopindex }}" {% endif %}>
+    <div class="product-card {{ params.className }} {{ array.attr.className }}">
+      <a href="#" class="product-card__thumb">
+        <img src="images/{{ array.img }}" alt="" class="product-card__img"/>
+        {% if array.attr.dailyDeal %}
+          <div class="product-card__daily-deal-list">
+            {% for item in array.attr.dailyDeal %}
+              <div class="product-card__daily-deal-item" style="background:{{ item.color }};">
+                {{ item.text }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </a>
+      <a href="#" class="product-card__title">
+        {{ array.title }}
+      </a>
+      <div class="product-card__order">
+        <div class="order-info">
+          <div class="order-info__count">
+            <svg class="count__ico" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+              <circle r="6" cx="6" cy="6" fill="{{ array.count.color }}"/>
+            </svg>
+            <span class="count__text">
+              {{ array.count.text }}
+            </span>
+          </div>
+          <div class="order-info__cost">
+            {{ array.cost }}
+          </div>
+        </div>
+        <div class="product-card__btn">
+          <a class="cart-btn" href="#">
+            {{ mixins.icon(
+          {
+          className: 'cart-btn__icon svg-ico' + array.attr.canceler,
+          id: array.attr.icon
+          }
+          ) }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endmacro %}

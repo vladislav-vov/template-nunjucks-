@@ -1,0 +1,238 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.product-card {
+  height: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .product-card__thumb {
+    flex: 0 0 auto;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: block;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: math.div(1px, 1px) * 100%;
+      background: $color-white;
+    }
+  }
+
+  .product-card__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .count__ico {
+    height: 7px;
+    width: 7px;
+  }
+
+  .cart-btn {
+    background: $color-blue;
+    color: $color-white;
+    padding: 10px;
+    border-radius: $radius-secondary;
+    width: 44px;
+    height: 44px;
+    margin-top: auto;
+
+    &:hover,
+    &:focus {
+      background: darken($color-blue, 15%);
+      color: darken($color-white, 10%);
+    }
+  }
+
+  .cart-btn__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .product-card__order {
+    padding-top: 4px;
+    display: flex;
+    margin-top: auto;
+    z-index: 11;
+  }
+
+  .product-card__title {
+    padding: 10px 0 4px 0;
+  }
+
+  .product-card__btn {
+    display: flex;
+    margin-left: auto;
+    padding-left: 5px;
+  }
+
+  .order-info__count {
+    padding-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .order-info__cost {
+    padding-top: 4px;
+    font-weight: 600;
+    color: $color-black;
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+/**
+* Md
+*/
+
+@media (min-width: $bp-md) {
+  .product-card {
+    .count__ico {
+      width: 12px;
+      height: 12px;
+    }
+
+    .order-info__count {
+      font-size: 14px;
+    }
+  }
+}
+
+/**
+* Xl
+*/
+
+@media (min-width: $bp-xl) {
+
+}
+
+// **************************************************************************************************
+// ** Default
+// **************************************************************************************************
+
+.product-card_default {
+  border-bottom: 1px solid $color-light_gray;
+  padding: 20px 0;
+}
+
+/**
+* Md
+*/
+
+@media (min-width: $bp-md) {
+  .product-card_default {
+    border: 0;
+    padding: 0;
+  }
+}
+
+// **************************************************************************************************
+// ** Recomended
+// **************************************************************************************************
+
+.product-card_style_primary {
+  background: $color-light_gray;
+  border-radius: $radius-primary;
+  padding: 11px 11px 18px 13px;
+
+  .product-card__thumb {
+    border-radius: $radius-secondary;
+
+    .product-card__daily-deal-list {
+      position: absolute;
+      right: 7px;
+      top: 8px;
+
+      .product-card__daily-deal-item {
+        color: $color-white;
+        padding: 5px 8px;
+        margin-bottom: 5px;
+        border-radius: $radius-tertiary;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+
+  .order-info__count {
+    gap: 6px;
+  }
+}
+
+/**
+* Xs
+*/
+
+/**
+* Md
+*/
+
+@media (min-width: $bp-md) {
+  .product-card__item {
+    margin-bottom: 0px;
+
+    .product-card_style_primary {
+      padding: 14px 14px 10px 15px;
+
+      .product-card__thumb {
+        border-radius: $radius-tertiary;
+
+        .product-card__daily-deal-list {
+          right: 15px;
+          top: 14px;
+
+          .product-card__daily-deal-item {
+            padding: 10px;
+            border-radius: $radius-secondary;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+* Xl
+*/
+
+@media (min-width: $bp-xl) {
+  .product-card__item {
+    .product-card_style_primary {
+      padding: 10px;
+
+      .product-card__thumb {
+        border-radius: $radius-secondary;
+      }
+      .product-card__daily-deal-list {
+        right: 15px;
+        top: 14px;
+
+        .product-card__daily-deal-item {
+          padding: 10px;
+          border-radius: $radius-secondary;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{# Параметры страницы #}
+
+{% set pageType = 'mainPage' %}
+{% set pageWidth = 'fullWidth' %}
+{% set hasSidebar = false %}
+{% set pageTitle = "Главная страница" %}
+{% set headerFixed = true %}
+
+{% import "components/lists/banner/banner.njk" as banner %}
+{% import "components/lists/catalog-preview-list/catalog-preview-list.njk" as catalogPreviewList %}
+{% import "components/unsorted/product-card/product-card.njk" as productCard %}
+
+{# Параметры страницы #}
+
+{% extends "layouts/_layout.njk" %}
+
+{% block content %}
+
+  <div class="c-section pt-3 pt-md-2">
+    <div class="container">
+      <div class="c-banner-block row">
+        <div class="col-12">
+          {{ banner.default(bannerArr,
+            {
+              className: 'c-banner_default c-banner_large mb-3 mb-md-2 mb-xl-0'
+            }) 
+          }}
+        </div>
+        <div class="col-12">
+          <div class="row banner__recomended">
+            {% for item in recomendedArr %}
+              {{ productCard.default(item,
+                {
+                className: 'product-card_style_primary'
+                }) 
+              }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-section">
+    <div class="container">
+      {{ catalogPreviewList.default(productArr, {
+    Type: 'product',
+    Title: 'Хиты продаж',
+    textBtn: 'Все товары'
+    }) }}
+    </div>
+  </div>
+
+  <div class="c-section">
+    <div class="container">
+      {{ catalogPreviewList.default(categoryArr, {
+    Type: 'category',
+    Title: 'Наша продукция',
+    textBtn: 'Вся продукция'
+    }) }}
+    </div>
+  </div>
+
+  <div class="c-section">
+    <div class="container">
+      {{ catalogPreviewList.default(informationArr, {
+    Type: 'information',
+    Title: 'Полезная информация',
+    textBtn: 'Читать еще'
+    }) }}
+    </div>
+  </div>
+
+  <div class="c-section pb-5 pb-md-6 pb-xl-7">
+    <div class="container">
+      {{ catalogPreviewList.default(newsArr, {
+    Type: 'news',
+    Title: 'Новости',
+    textBtn: 'Читать еще'
+    }) }}
+    </div>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-ico c-btn__icon svg-ico_no_stroke svg-ico">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cross"></use>
+  </svg>
+
+{% endblock %}

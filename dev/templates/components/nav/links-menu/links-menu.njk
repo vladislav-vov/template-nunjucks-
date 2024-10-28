@@ -1,0 +1,23 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default(array, params) %}
+
+	<div class="{{ params.col }}">
+		<ul class="links-menu {% if params.loopindex == 1 %}ps-0{% endif %} {% if params.isLastLoop %}m-0 pe-xl-0{% endif %}">
+			{% for item in array %}
+				{% if item.head %}
+					<li class="links-menu__item {{ item.className }}">
+						<div class="links-menu__head" href="#">{{ item.head }}</div>
+					</li>
+				{% endif %}
+				{% if item.link %}
+					<li class="links-menu__item {{ item.className }}">
+						<a class="links-menu__link links-menu__link_events" href="#">{{ item.link }}</a>
+					</li>
+				{% endif %}
+
+			{% endfor %}
+		</ul>
+	</div>
+
+{% endmacro %}

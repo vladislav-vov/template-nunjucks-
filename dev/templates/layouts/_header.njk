@@ -1,0 +1,82 @@
+{% import "components/controls/button/button.njk" as button %}
+{% import "components/nav/main-menu/main-menu.njk" as mainMenu %}
+{% import "components/nav/popup-menu/popup-menu.njk" as popupMenu %}
+{% import "components/lists/inter-list/inter-list.njk" as interList %}
+{% import "components/controls/hamburger/hamburger.njk" as hamburger %}
+
+<header class="c-header">
+  <div class="container">
+    <div class="c-header__head pb-1 d-none d-xl-block">
+      <div class="c-header-info no-gutters row">
+        <div class="col c-header-info__item pl-0">
+          Офис/склад: Москва, ул. Стахановская, 8
+        </div>
+        <div class="col-auto c-header-info__item">
+          <a href="tel:+74991701010">
+            +7 (499) 170-10-10
+          </a>
+        </div>
+        <div class="col-auto c-header-info__item">
+          <a href="mailto:info@skala.ru">
+            info@skala.ru
+          </a>
+        </div>
+        <div class="col-auto c-header-info__item pr-0">
+          {{ button.default(
+            {
+              icon: {
+              id: 'person',
+              className: 'c-btn__icon svg-ico_no_stroke'
+              },
+              iconPosition: 'before',
+              iconWrapper : 'svg-ico_wrapper_default',
+              className: 'c-btn c-btn_style_default c-btn_color_primary c-btn_size_sm',
+              text: 'Личный кабинет',
+              attrs: {
+              href: '#'
+              }
+            }
+            )
+          }}
+        </div>
+      </div>
+    </div>
+    <div class="c-header__main">
+      <div class="c-header__navigation">
+        <div class="row" style="flex-wrap: nowrap">
+          <div class="col-auto d-none d-md-block d-xl-none">
+            {{ hamburger.default({
+              className: 'hamburger_default',
+              wrapperName: 'c-wrapper__hamburger_style_primary',
+              toggleName: 'popup-menu-md'
+            }) }}
+          </div>
+          <div class="c-header__logo">
+            <a class="c-logo" href="/">
+              <img class="c-logo__img" src="/images/Logo.png" alt="Лого">
+              <div class="c-header__logo-text d-none d-md-block">Торговый дом</div>
+            </a>
+          </div>
+          <div class="col-auto d-none d-xl-block ms-auto">
+            {{ mainMenu.default(mainMenuArr) }}
+          </div>
+          <div class="col-auto" style="flex: 1 1 auto">
+            {{ interList.default(interListArr) }}
+          </div>
+          <div class="col-auto d-md-none">
+            {{ hamburger.default({
+              className: 'hamburger_default',
+              toggleName: 'popup-menu-xs'
+            }) }}
+          </div>
+        </div>
+      </div>
+      {{ popupMenu.default(popupMenuArr, {
+        toggleName: 'popup-menu-xs'
+      }) }}
+      {{ popupMenu.default(popupMenuCatArr, {
+        toggleName: 'popup-menu-md'
+      }) }}
+    </div>
+  </div>
+</header>

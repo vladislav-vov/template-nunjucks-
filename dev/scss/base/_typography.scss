@@ -1,0 +1,17 @@
+a {
+	text-align: start;
+	text-decoration: none;
+	color: $color-text;
+
+	&:hover, &:focus {
+		color: $color-blue;
+	}
+}
+
+p {
+	margin-bottom: 30px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

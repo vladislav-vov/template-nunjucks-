@@ -1,0 +1,207 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.c-input {
+	display: block;
+	width: 100%;
+	outline: 0;
+	font-family: inherit;
+}
+
+
+/**
+* Default
+*/
+
+.c-input_style_default {
+	background: #fff;
+	border: 1px solid transparent;
+	-webkit-appearance: none;
+	color: $color-light_gray;
+	box-shadow: none;
+
+	@include g-transition(border-color);
+	@include input-placeholder {
+		color: $color-black;
+	}
+
+	&:focus {
+		color: $color-text;
+	}
+
+	&[disabled],
+	&[readonly] {
+		background-color: transparent;
+		border-color: $color-light_gray;
+	}
+
+	&.c-input_border {
+		border-color: $color-light_gray;
+	}
+
+	&.c-input_error {
+		border-color: $color-error;
+		color: $color-error;
+	}
+
+	&.c-input_success {
+		border-color: $color-success;
+	}
+
+	&.c-input_size_md {
+		height: 50px;
+		min-height: 50px;
+		padding: 0 15px;
+		border: 1px solid transparent;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+	}
+
+	&.c-input_size_lg {
+		height: 66px;
+		min-height: 66px;
+		border-radius: 33px;
+		padding: 0 30px;
+		border-width: 2px;
+
+		&.c-input_multiline {
+			height: 160px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
+}
+
+
+/**
+* Lined
+*/
+
+.c-input_lined {
+	border: 1px solid $color-light_gray;
+	border-radius: $radius-secondary;
+}
+
+.c-input_lined.c-input_size_md {
+	width: 100%;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+}
+
+@media (min-width: $bp-xl) {
+
+}
+
+
+/**
+* Антиспам-поле
+*/
+
+.c-input_phone,
+.input-tel-field {
+
+	@include hide;
+}
+
+
+/**
+* Input label
+*/
+
+.c-input-label {
+	display: inline-block;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: get-line-height(19px, 14px);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: $color-text;
+	margin-bottom: 10px;
+}
+
+.c-input-label__required {
+	color: $color-error;
+}
+
+@media (max-width: 375px) {
+
+	.c-input-label {
+		white-space: normal;
+	}
+}
+
+
+/**
+* Input group
+*/
+
+.c-input-group {
+	display: flex;
+}
+
+.c-input-group__main {
+	flex: 1 1 1%;
+}
+
+.c-input-group__aside {
+	flex: 0 0 auto;
+}
+
+.c-input-group_prepend {
+
+	.c-input {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+
+/**
+* Autosize
+*/
+
+.c-input_autosize {
+	resize: none;
+}
+
+
+/****************************************************************************/
+/* FIELD */
+/****************************************************************************/
+
+.c-field {
+	position: relative;
+	overflow: hidden;
+
+	.c-input {
+		padding-right: 70px;
+	}
+}
+
+.c-field__aside {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	color: $color-text;
+
+	&.c-btn {
+		padding-left: 15px;
+		padding-right: 15px;
+
+		&:hover, &:focus {
+			color: $color-text;
+		}
+	}
+
+	.c-btn__icon {
+		width: 20px;
+		height: 20px;
+	}
+}
+

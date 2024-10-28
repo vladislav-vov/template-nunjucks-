@@ -1,0 +1,85 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+// .c-search {
+// 	position: relative;
+// 	display: flex;
+// 	align-items: center;
+// 	width: 100%;
+// }
+
+.search-form {
+	position: relative;
+	width: 100%;
+	color: $color-text;
+
+	&_open {
+		.search-form__field {
+			width: 100%;
+		}
+
+		.search-form__close {
+			// display: block;
+			opacity: 1;
+		}
+	}
+
+	&__field {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 0%;
+		background: transparent;
+		transition: width 0.3s linear;
+		z-index: 1;
+	}
+
+	&__input.c-input {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+		width: 100%;
+		padding: 7px 20px;
+		background-color: transparent;
+		border: none;
+		margin: 0;
+	}
+
+	&__close {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translate(0, -50%);
+		// display: none;
+		background: transparent;
+		opacity: 0;
+		z-index: 2;
+		transition: opacity 0.3s ease;
+
+		.svg-ico {
+			stroke: currentColor;
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	&__btn {
+		position: relative;
+		background: transparent;
+		z-index: 2;
+
+		.svg-ico {
+			stroke: currentColor;
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+@media (min-width: $bp-lg) {
+	.search-form {
+	}
+}

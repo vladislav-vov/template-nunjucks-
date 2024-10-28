@@ -1,0 +1,32 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.info-list__item {
+  padding-bottom: 10px;
+}
+
+.info-list__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+}
+
+@media (min-width: $bp-md) {
+  .info-list__item {
+    padding: 0 5px;
+  }
+
+  .info-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 -5px;
+
+    .info-list__item {
+      padding: 0 5px;
+    }
+  }
+}

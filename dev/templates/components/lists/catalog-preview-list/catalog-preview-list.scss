@@ -1,0 +1,40 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.c-catalog-preview-list__link {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.c-catalog-preview-list, .c-catalog-preview-list__title {
+  padding: 0 10px;
+}
+
+.c-catalog-preview-list__head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 -10px;
+  padding-bottom: 30px;
+}
+
+.c-product-card__list {
+  --bs-gutter-y: 20px;
+
+}
+
+/**
+* Md
+*/
+
+@media (min-width: $bp-md) {
+  .c-catalog-preview-list__link {
+    margin-left: 0;
+  }
+
+  .c-catalog-preview-list__title {
+    max-width: 100%;
+  }
+}

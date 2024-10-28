@@ -1,0 +1,22 @@
+{% import "components/controls/button/button.njk" as button %}
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default(array, params) %}
+
+  <div class="news-card__item {{ array.attr.col }} {{ array.attr.m }}">
+    <div class="news-card">
+      <div class="news-card__data">{{ array.data }}</div>
+      <div href="#" class="news-card__title">{{ array.title }}</div>
+      <div href="#" class="news-card__text">{{ array.text }}</div>
+      {{ button.default(
+        {
+          className: 'c-btn c-btn_style_link c-btn_color_blue c-btn_size_xs news-card__btn',
+          text: params.linkMore,
+          attrs: {
+          href: '#'
+          }
+        }) }}
+    </div>
+  </div>
+
+{% endmacro %}

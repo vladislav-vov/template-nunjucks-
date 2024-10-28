@@ -1,0 +1,63 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default (
+	array = {
+		className: 'c-btn',
+		text: 'Кнопка',
+		attrs: {
+			href: '#',
+			type: ''
+		}
+	}
+) %}
+
+{% if (array.attrs.href) %}
+    <a class="{{ array.className }}" {{ array.attrs | implode_attrs() | safe }}>
+    {% elseif (array.attrs.for) %}
+      <label class="{{ array.className }}" {{ array.attrs | implode_attrs() | safe }}>
+      {% elseif (array.attrs.type) %}
+        <button class="{{ array.className }}" {{ array.attrs | implode_attrs() | safe }}>
+        {% else %}
+          <span class="{{ array.className }}" {{ array.attrs | implode_attrs() | safe }}>
+          {% endif %}
+
+          {% if array.icon and array.iconPosition === 'before' or not array.iconPosition %}
+            {% if array.icon | get_type === 'object' %}
+              {{ mixins.icon(array.icon) }}
+            {% else %}
+              {{ array.icon | safe }}
+            {% endif %}
+          {% endif %}
+          {% if array.textClassName %}
+            <span class="{{ array.textClassName }}">{{ array.text | safe }}</span>
+          {% else %}
+            {{ array.text | safe }}
+          {% endif %}
+          {% if array.icon and array.iconPosition === 'after' %}
+            {% if array.iconWrapper %}
+              <span class="{{ array.iconWrapper }}">
+            {% endif %}
+            {% if array.icon | get_type === 'object' %}
+              {{ mixins.icon(array.icon) }}
+            {% else %}
+              {{ array.icon | safe }}
+            {% endif %}
+            {% if array.iconWrapper %}
+              </span>
+            {% endif %}
+          {% endif %}
+          {% if array.decor %}
+            <svg class="c-btn-decor" xmlns="http://www.w3.org/2000/svg"></svg>
+          {% endif %}
+
+          {% if (array.attrs.href) %}
+          </a>
+        {% elseif (array.attrs.for) %}
+        </label>
+      {% elseif (array.attrs.type) %}
+      </button>
+    {% else %}
+    </span>
+  {% endif %}
+
+{% endmacro %}

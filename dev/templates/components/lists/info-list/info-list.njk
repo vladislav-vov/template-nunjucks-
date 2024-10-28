@@ -1,0 +1,15 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default(array, params) %}
+
+  <div class="info-list {{ params.className }}">
+    {% for item in array %}
+      <div class="info-list__item">
+        <div class="info-list__text">
+          {{ item.text }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endmacro %}

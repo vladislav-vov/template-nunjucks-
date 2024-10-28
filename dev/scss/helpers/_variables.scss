@@ -1,0 +1,101 @@
+@import "functions";
+
+$radius-primary: 20px;
+$radius-secondary: 10px;
+$radius-tertiary: 5px;
+
+/****************************************************************************/
+/* COLOR PALETTE */
+/****************************************************************************/
+
+/**
+* Basic colors
+*/
+
+$color-text: #626569;
+$color-blue: #0536B1;
+$color-blue_light: #255CE7;
+$color-white: #FFFFFF;
+$color-light_gray: #F1F5F7;
+$color-black: #3E3E3E;
+$color-medium_gray: #A9AFBB;
+
+/**
+* Validation colors
+*/
+
+$color-success: #15b500; //
+$color-success-light: #effff0; //
+$color-error: #ff4c6d;
+$color-error-light: #ffefef; //
+$color-warning: #fa7b6a; //
+$color-info: #ea9900; //
+$color-info-light: #fff4da; //
+
+
+/****************************************************************************/
+/* FONTS */
+/****************************************************************************/
+
+/**
+* Font families
+*/
+
+$font-primary: 'Manrope', sans-serif;
+
+/****************************************************************************/
+/* BREAKPOINTS */
+/****************************************************************************/
+
+$bp-xs: 320px;
+$bp-sm: 640px;
+$bp-md: 744px;
+$bp-lg: 1024px;
+$bp-xl: 1440px;
+$bp-xxl: 1920px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $bp-sm,
+  md: $bp-md,
+  lg: $bp-lg,
+  xl: $bp-xl,
+  xxl: $bp-xxl,
+);
+
+
+/****************************************************************************/
+/* UI */
+/****************************************************************************/
+
+$global-gutter: 10px;
+$grid-gutter-width: 30px;
+
+$spacers: (
+	0: 0,
+	1: 10px,
+	2: 20px,
+	3: 30px,
+	4: 40px,
+	5: 50px,
+	7: 70px
+);
+
+$container-sm-width: $bp-sm - ((40 - $global-gutter) * 2);
+$container-md-width: $bp-md - ((40 - $global-gutter) * 2);
+$container-lg-width: $bp-lg - ((40 - $global-gutter) * 2);
+$container-xl-width: $bp-xl - ((40 - $global-gutter) * 2);
+
+$container-max-widths: (
+	sm: $container-sm-width,
+	md: $container-md-width,
+	lg: $container-lg-width,
+	xl: $container-xl-width
+);
+
+$grid-gutter-width: 20px;
+
+
+
+
+

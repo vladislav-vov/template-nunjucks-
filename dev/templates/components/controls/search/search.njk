@@ -1,0 +1,45 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default(array, params) %}
+
+  <form class="search-form d-block d-md-none" action="search-form" method="POST" data-form-search="default">
+    <button class="search-form__btn search-form__btn_style_primary c-btn" type="submit">
+      {{ mixins.icon(
+          {
+            className: 'svg-ico svg-ico_no_fill',
+            id: 'search'
+          }
+      ) }}
+    </button>
+    <input class="search-form__input c-input c-input_style_default c-input_size_md" name="Q" type="text" placeholder="Поиск">
+  </form>
+
+{% endmacro %}
+
+{% macro button(array) %}
+  <form action="search-form" class="search-form" method="POST">
+    <button class="search-form__btn search-form__btn_style_secondary" type="submit">
+      {% if array.params.icon %}
+        {{ mixins.icon(
+        {
+        className: 'svg-ico' + array.params.canceler,
+        id: array.params.icon
+        }
+      ) }}
+      {% endif %}
+    </button>
+    <div class="search-form__field">
+      <input class="search-form__input c-input c-input_lined c-input_size_md" name="Q" type="text" placeholder="Найти...">
+      <button class="c-btn search-form__close search-form__btn_style_tertiary" type="button">
+        {% if array.params.icon %}
+          {{ mixins.icon(
+          {
+          className: 'svg-ico',
+          id: 'cross'
+          }
+        ) }}
+        {% endif %}
+      </button>
+    </div>
+  </form>
+{% endmacro %}

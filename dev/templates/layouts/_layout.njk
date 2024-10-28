@@ -1,0 +1,115 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% import "partials/_content-includes.njk" as includes %}
+{% import "components/controls/button/button.njk" as button %}
+
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>{{ title if title else 'Шаблон' }}</title>
+	<meta name="format-detection" content="telephone=no"/>
+
+	{% if site.responsive %}
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% else %}
+		<meta name="viewport" content="width=1200">
+	{% endif %}
+
+	{% include "partials/_app-icons.njk" %}
+
+	<link rel="preload" href="fonts/manrope-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="fonts/manrope-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="fonts/manrope-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="fonts/manrope-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="fonts/manrope-extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="template_styles.css">
+	<link rel="stylesheet" type="text/css" href="css/components.css">
+
+	<script src="js/bundle.runtime.js"></script>
+	<script src="js/bundle.main.js"></script>
+
+</head>
+
+<body>
+
+{# Variables array for passing to components #}
+{% set app = {
+    isIndex: true if pageType == 'mainPage' else false,
+	isFullWidth: true if pageWidth == 'fullWidth' else false,
+	isSearch: true if pageType == 'searchPage' else false,
+	is404: true if pageType == '404' else false,
+	hasSidebar: true  if hasSidebar == true else false,
+	hasFilter:  true  if hasFilter == true else false,
+	hideH1: true if hideH1 == true else false,
+	hideBreadcrumbs: true if hideBreadcrumbs == true else false,
+	path: 'Главная/' + (path if path) + pageTitle
+} %}
+
+{% include "partials/_svg-sprite.njk" %}
+
+{% set pageClassName = {
+	'c-page_restricted': accessRestricted,
+	'c-page_404': app.is404,
+	'c-page_footer_no_radius': footerColor,
+	'c-page_header_fixed': headerFixed
+} %}
+
+<div class="c-page {{ pageClassName | implode_classname }}">
+	{% include "layouts/_header.njk" %}
+
+	{% set contentClassName = {
+		'content_index pb-0': app.isIndex,
+		'content_detail': not app.isIndex,
+		'content_textpage default-typo': app.isTextPage,
+		'pt-0': noPaddingTop,
+		'pb-0': noPaddingBottom
+	} %}
+
+	<div class="content {{ contentClassName | implode_classname }}">
+		{% if not app.isFullWidth %}
+			<div class="container">
+		{% endif %}
+
+			<div class="content__body">
+				<main class="content__item content__main">
+					{% if app.isIndex %}
+						{% include "partials/_indexblocks.njk" %}
+					{% endif %}
+
+					{% if not app.isIndex and not app.hideH1 %}
+						{% if app.isFullWidth %}
+							<div class="container">
+						{% endif %}
+
+						<h1 class="c-title c-title_size_xl">{{ pageTitle }}</h1>
+
+						{% if app.isFullWidth %}
+							</div>
+							<!-- /.container -->
+						{% endif %}
+					{% endif %}
+
+					{% block content %}
+					{% endblock %}
+				</main>
+			</div>
+			<!-- /.content__body -->
+
+		{% if not app.isFullWidth %}
+			</div>
+			<!-- /.container -->
+		{% endif %}
+	</div>
+	<!-- /.content -->
+
+	{% if not hideFooter %}
+		{% include "layouts/_footer.njk" %}
+	{% endif %}
+</div>
+
+	{% include "components/modules/dev-panel/dev-panel.njk" %}
+</body>
+</html>

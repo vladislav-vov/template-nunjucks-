@@ -1,0 +1,74 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.links-menu {
+	color: $color-black;
+	list-style: none;
+	text-align: center;
+}
+
+.links-menu__item:not(:last-child) {
+	padding-bottom: 6px;
+}
+
+
+.links-menu__item {
+	font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.links-menu__head {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 19px;
+}
+.links-menu__item_active {
+	color: $color-blue;
+}
+
+.links-menu__link {
+	color: inherit;
+}
+
+.links-menu__link_events {
+	text-decoration: none;
+
+	&:hover, &:focus {
+		text-decoration: underline;
+	}
+}
+
+/**
+* Xs
+*/
+
+
+/**
+* Md
+*/
+
+@media (max-width: $bp-md - 1) {
+	.links-menu {
+		margin-bottom: 20px;
+	}
+}
+
+@media (min-width: $bp-md) {
+	.links-menu {
+		text-align: left;
+	}
+}
+
+/**
+* Xl
+*/
+
+@media (min-width: $bp-xl) {
+	.links-menu_head {
+		font-size: 16px;
+		line-height: 22px;
+	}
+}

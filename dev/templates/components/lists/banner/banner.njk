@@ -1,0 +1,31 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% import "components/controls/button/button.njk" as button %}
+
+{% macro default(array, params) %}
+  {% for item in array %}
+    <div class="c-banner {{ params.className }}">
+      <picture class="c-banner__bg p-0">
+        <source media="(max-width: 639px)" srcset="{{ item.img[0] }}"/>
+        <source media="(min-width: 640px)" srcset="{{ item.img[1] }}"/>
+        <img src="{{ item.img[0] }}" alt="" class="c-banner__img">
+      </picture>
+      <div class="c-banner__info">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="c-banner__info-title mb-18 mb-md-2 d-inline d-sm-none">{{ item.title[0] }}<br>{{ item.title[1] }}</div>
+            <div class="c-banner__info-desc">{{ item.desc[0] }}<br>{{ item.desc[1] }}</div>
+            {% if item.controls %}
+              {% for button in item.controls %}
+                <div class="c-banner__controls row align-items-center">
+                  {{ button.default(button) }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  {% endfor %}
+
+{% endmacro %}

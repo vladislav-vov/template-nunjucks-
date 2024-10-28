@@ -1,0 +1,21 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro button(array, params) %}
+
+  <div class="c-comparison">
+    <a class="c-btn c-comparison__btn {{ array.classNameBtn }}" href="#">
+      {% if array.params.icon %}
+        {{ mixins.icon(
+          {
+          className: 'svg-ico' + array.params.canceler,
+          id: array.params.icon
+          }
+        ) }}
+      {% endif %}
+      <span class="c-text c-comparison__text">
+        {{ array.text }}
+      </span>
+    </a>
+  </div>
+
+{% endmacro %}

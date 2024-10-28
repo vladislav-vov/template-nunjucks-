@@ -1,0 +1,195 @@
+/****************************************************************************/
+/* BUTTONS */
+/****************************************************************************/
+
+$btn-border-width: 1px;
+
+$buttonsDefault: (
+	primary: (
+		color: $color-white,
+		border-color: $color-blue,
+		background-color: $color-blue,
+		color-hover: $color-white,
+		border-color-hover: darken($color-blue, 10%),
+		background-color-hover: darken($color-blue, 10%),
+	)
+);
+
+$buttonsGhost: (
+	primary: (color: $color-white,
+		border-color: $color-white,
+		background-color: transparent,
+		color-hover: $color-white,
+		border-color-hover: $color-white,
+		background-color-hover: $color-white,
+	),
+);
+
+$buttonsLink: (
+	text: (color: $color-text,
+		color-hover: darken($color-text, 10%),
+	),
+	blue: (color: $color-blue,
+		color-hover: darken($color-blue, 10%),
+	),
+	blue-light: (color: $color-blue_light,
+		color-hover: darken($color-blue_light, 10%),
+	),
+
+	primary: (color: $color-black,
+		color-hover: lighter($color-black, 10%),
+	),
+);
+
+$buttonsUnderline: (
+	text: (color: $color-white,
+		border-color: $color-white,
+		color-hover: $color-white,
+		border-color-hover: $color-white,
+	),
+);
+
+.c-btn {
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	text-align: center;
+	max-width: 100%;
+	padding: 0;
+	border: 0;
+	outline: 0;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/**
+* Disabled state
+*/
+
+.c-btn_disabled {
+	cursor: default;
+	opacity: 0.5;
+}
+
+
+/****************************************************************************/
+/* SIZES */
+/****************************************************************************/
+
+/**
+* Xs
+*/
+
+.c-btn_style_link.c-btn_size_xs {
+	line-height: 12px;
+	font-size: 12px;
+	font-weight: 400;
+
+	@media (min-width: $bp-md) {
+		font-size: 16px;
+		line-height: 22px;
+	}
+}
+
+.c-btn_style_default.c-btn_size_xs {
+	line-height: 16px;
+	padding: 8px 10px;
+	font-size: 12px;
+	border-radius: $radius-secondary;
+	font-weight: 400;
+	gap: 6px;
+
+	.c-btn__icon {
+		margin: auto;
+		width: 16px;
+		height: 16px;
+		fill: currentColor;
+	}
+}
+
+/**
+* Sm
+*/
+
+.c-btn_style_default.c-btn_size_sm {
+	line-height: 19px;
+	padding: 10px;
+	font-size: 14px;
+	border-radius: $radius-secondary;
+	font-weight: 400;
+	gap: 6px;
+
+	.c-btn__icon {
+		margin: auto;
+		width: 16px;
+		height: 16px;
+		fill: currentColor;
+	}
+}
+
+.c-btn_style_link.c-btn_size_sm {
+	line-height: 17px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+/**
+* Md
+*/
+
+.c-btn_style_link.c-btn_size_md {
+	font-weight: 500;
+	line-height: 22px;
+	font-size: 16px;
+	gap: 8px;
+
+	.c-btn__icon {
+		width: 24px;
+		height: 24px;
+		margin: auto;
+		fill: currentColor;
+	}
+}
+
+
+
+/****************************************************************************/
+/* WIDTHS */
+/****************************************************************************/
+
+
+
+/****************************************************************************/
+/* DEFAULT BUTTONS */
+/****************************************************************************/
+
+@include default-buttons($buttonsDefault, $btn-border-width);
+
+
+
+/****************************************************************************/
+/* GHOST BUTTONS */
+/****************************************************************************/
+
+@include ghost-buttons($buttonsGhost, $btn-border-width);
+
+
+/****************************************************************************/
+/* UNDERLINED BUTTONS */
+/****************************************************************************/
+
+// @include underline-buttons($buttonsUnderline, $btn-border-width);
+
+/****************************************************************************/
+/* LINK BUTTONS */
+/****************************************************************************/
+
+@include link-buttons($buttonsLink);
+
+/**
+* Bare
+*/
+

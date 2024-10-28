@@ -1,0 +1,47 @@
+/****************************************************************************/
+/* TITLES */
+/****************************************************************************/
+
+.c-title {
+	color: $color-black;
+}
+
+/**
+* Size sm
+*/
+
+
+
+/**
+* Size md
+*/
+
+.c-title_md {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+}
+
+@media (min-width: $bp-md) {
+	.c-title_md {
+		font-size: 34px;
+		line-height: 44px;
+	}
+}
+
+/**
+* Size lg
+*/
+
+
+
+/**
+* Size xl
+*/
+
+
+
+/**
+* Form
+*/
+

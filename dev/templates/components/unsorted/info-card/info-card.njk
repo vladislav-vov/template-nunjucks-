@@ -1,0 +1,14 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default (array, params) %}
+
+<div class="information__item {{ array.attr.col }} {{ array.attr.m }}">
+  <div class="information-card c-card">
+    <a href="#" class="information-card__thumb">
+      <img class="information-card__img" src="images/{{ array.img }}" alt="">
+    </a>
+    <a href="#" class="information-card__title d-block">{{ array.title }}</a>
+  </div>
+</div>
+
+{% endmacro %}

@@ -1,0 +1,63 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% import "components/controls/button/button.njk" as button %}
+
+{% macro default(array, params) %}
+
+<nav class="main-menu {{ params.className }}">
+    <ul class="main-menu__list">
+      {% for item in array %}
+        {% if item.url %}
+          {% set url = item.url %}
+        {% else %}
+          {% set url = 'https://google.ru/?item=' + loop.index %}
+        {% endif %}
+
+        {% set attrs = {
+          href: url,
+          'data-modal': item.params.modal or false
+        } %}
+
+        <li class="main-menu__item {{ item.className }}">
+          <a class="c-btn c-btn_style_link main-menu__link {{ item.classNameBtn }}" {{ attrs | implode_attrs | safe }} {% if item.popup %}
+            data-popup-toggle="{{ item.popup }}"
+          {% endif %}
+          {% if item.acn %}
+            data-acn-toggle="{{ loop.index }}"
+          {% endif %}>
+            {% if item.params.icon %}
+              {{ mixins.icon(
+                    {
+                    className: 'svg-ico c-btn__icon' + item.params.canceler,
+                    id: item.params.icon
+                    }
+                  ) }}
+            {% endif %}
+            <span class="main-menu__text">
+              {{ item.text }}
+            </span>
+          </a>
+          {% if item.acn %}
+            <div class="main-menu__acn-wrapper d-none" data-acn="{{ loop.index }}">
+              {% for item in item.acn %}
+                <a href="#" class="c-btn c-btn_style_link main-menu__link {{ item.classNameBtn }}">
+                  {% if item.params.icon %}
+                    {{ mixins.icon(
+                    {
+                    className: 'svg-ico c-btn__icon' + item.params.canceler,
+                    id: item.params.icon
+                    }
+                  ) }}
+                  {% endif %}
+                  <span class="main-menu__text main-menu__text_style_primary">
+                    {{ item.text }}
+                  </span>
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+{% endmacro %}

@@ -1,0 +1,93 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.popup-menu {
+  position: absolute;
+  top: 46px;
+  background: $color-white;
+  border: 1px solid $color-light_gray;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+}
+.popup-menu__item {
+  border-bottom: 1px solid $color-light_gray;
+}
+
+.popup-menu__info-list {
+  padding: 17px 22px 9px 15px;
+
+  .info-list__text {
+    text-align: start;
+  }
+}
+
+.popup-menu__main-menu {
+  .main-menu__list {
+    padding: 27px 15px 5px 15px;
+  }
+}
+
+@media (min-width: $bp-sm) {
+}
+
+@media (min-width: $bp-md) {
+  .popup-menu {
+    top: 54px;
+  }
+
+  .popup-menu__info-list {
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -5px;
+  }
+
+  .popup-menu__main-menu {
+    .main-menu__list {
+      padding: 40px 20px 25px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .main-menu__item {
+      flex-basis: calc(50%);
+
+      &:nth-child(2n) {
+        text-align: end;
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-lg) {
+}
+
+@media (min-width: $bp-xl) {
+  .popup-menu {
+    top: 65px;
+  }
+
+  .popup-menu__main-menu {
+    .main-menu__list {
+      padding: 30px 60px 0 30px;
+    }
+
+    .main-menu__item {
+      flex-basis: calc(25%);
+
+      &:nth-child(2n) {
+        text-align: start;
+      }
+    }
+
+    .main-menu__link {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: $bp-xxl) {
+}

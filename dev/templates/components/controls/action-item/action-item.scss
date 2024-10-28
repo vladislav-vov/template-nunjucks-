@@ -1,0 +1,40 @@
+@use "sass:math";
+
+@import "dev/scss/helpers/variables";
+@import "dev/scss/helpers/mixins";
+
+.action-list__item {
+  min-height: 46px;
+  display: block;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: $color-text;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 22px;
+	padding: 0 9px;
+}
+.action-list__item-btn {
+
+}
+.action-list__item-text {
+
+}
+
+/**
+* Md
+*/
+
+@media (min-width: $bp-md) {
+	.action-list__item {
+		min-height: 55px;
+		font-size: 14px;
+		line-height: 19px;
+		padding: 0 15px 0 18px;
+
+		&:not(:last-child) {
+			border-right: 1px solid $color-light_gray;
+		}
+	}
+}

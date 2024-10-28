@@ -1,0 +1,36 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% import "components/lists/inter-list/inter-list.njk" as interList %}
+{% import "components/controls/search/search.njk" as search %}
+{% import "components/nav/main-menu/main-menu.njk" as mainMenu %}
+{% import "components/lists/info-list/info-list.njk" as infoList %}
+
+{% macro default(array, params) %}
+
+  <nav class="popup-menu d-none" data-popup="{{ params.toggleName }}">
+    {% if array.interListArr %}
+      <div class="popup-menu__item">
+        {{ interList.default(array.interListArr) }}
+      </div>
+    {% endif %}
+    {% if array.searchForm %}
+      <div class="popup-menu__item">
+        {{ search.default(array.searchForm) }}
+      </div>
+    {% endif %}
+    {% if array.mainMenu %}
+      <div class="popup-menu__item">
+        {{ mainMenu.default(array.mainMenu, {
+          className: 'popup-menu__main-menu'
+        }) }}
+      </div>
+    {% endif %}
+    {% if array.infoList %}
+      <div class="popup-menu__item d-xl-none">
+        {{ infoList.default(array.infoList, {
+          className: 'popup-menu__info-list'
+        }) }}
+      </div>
+    {% endif %}
+  </nav>
+
+{% endmacro %}

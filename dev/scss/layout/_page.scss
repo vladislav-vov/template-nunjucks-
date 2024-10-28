@@ -1,0 +1,107 @@
+/****************************************************************************/
+/* PAGE LAYOUT */
+/****************************************************************************/
+
+/**
+* 1. IE10-11 игнорируют свойство min-height у flex-контейнеров, поэтому указываем height меньше нужного, он перезапишется min-height
+* 2. Prevent text zoom on non-responsive websites in mobile browsers.
+* 3. Используем important, чтобы перебить стили fancybox, из-за которых страница прыгает наверх
+*/
+
+// с этим не работает sticky шапка
+// html,
+// body {
+// 	overflow-x: hidden;
+// 	height: 100%;
+// }
+
+body {
+	font-size: 14px;
+	line-height: 1.4;
+	color: $color-text;
+	font-family: $font-primary;
+}
+
+.c-page {
+	min-width: $bp-xs;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background-color: $color-white;
+	background-repeat: no-repeat;
+	padding: 10px 0 32px 0;
+}
+
+@media (min-width: $bp-md) {
+	.c-page {
+		padding: 10px 0 43px 0;
+	}
+}
+
+@media (min-width: $bp-xl) {
+	.c-page {
+		padding: 10px 0;
+	}
+}
+
+/**
+* Header Fixed
+*/
+
+@media (min-width: $bp-md) {
+	body {
+		font-size: 16px;
+	}
+}
+
+@media (min-width: $bp-xxl) {
+	body {
+		font-size: 18px;
+	}
+}
+
+/**
+* Editmode
+*/
+
+.bx-editmode {
+	height: auto;
+
+	body {
+		height: auto;
+	}
+}
+
+/**
+* Container
+*/
+
+.container {
+	--bs-gutter-x: 60px;
+}
+
+@media (min-width: $bp-sm) {
+	.container {
+		--bs-gutter-x: 20px
+	}
+}
+
+/**
+* Section
+*/
+
+.c-section {
+	padding: 25px 0;
+}
+
+@media (min-width: $bp-md) {
+	.c-section {
+		padding: 30px 0;
+	}
+}
+
+@media (min-width: $bp-xl) {
+	.c-section {
+		padding: 35px 0;
+	}
+}

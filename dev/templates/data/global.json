@@ -1,0 +1,360 @@
+{
+  "site": {
+    "title": "",
+    "address": "",
+    "email": "",
+    "phones": [],
+    "responsive": true,
+    "share": "vkontakte,facebook,odnoklassniki,twitter"
+  },
+  "mainMenuArr": [
+    {
+      "classNameBtn": "c-btn_color_blue c-btn_size_md",
+      "text": "Каталог",
+      "params": {
+        "icon": "katalog",
+        "canceler": " svg-ico_no_stroke"
+      },
+      "popup": "popup-menu-md"
+    },
+    {
+      "classNameBtn": "c-btn_color_text c-btn_size_md",
+      "text": "О компании"
+    },
+    {
+      "classNameBtn": "c-btn_color_text c-btn_size_md",
+      "text": "Доставка и оплата"
+    },
+    {
+      "classNameBtn": "c-btn_color_text c-btn_size_md",
+      "text": "Библиотека"
+    },
+    {
+      "classNameBtn": "c-btn_color_text c-btn_size_md",
+      "className": "p-0",
+      "text": "Контакты"
+    }
+  ],
+  "interListArr": {
+    "search": {
+      "className": "d-none d-md-flex",
+      "classNameBtn": "inter-list__btn",
+      "params": {
+        "icon": "search",
+        "canceler": " svg-ico_no_fill"
+      }
+    },
+    "favorite": {
+      "attr": "data-search-hide",
+      "className": "d-none d-md-flex",
+      "classNameBtn": "inter-list__btn",
+      "text": "0",
+      "params": {
+        "icon": "star",
+        "canceler": " svg-ico_no_stroke"
+      }
+    },
+    "comparison": {
+      "attr": "data-search-hide",
+      "className": "d-none d-md-flex",
+      "classNameBtn": "inter-list__btn",
+      "text": "0",
+      "params": {
+        "icon": "grid",
+        "canceler": " svg-ico_no_fill"
+      }
+    },
+    "cart": {
+      "attr": "data-search-hide",
+      "className": "",
+      "classNameBtn": "inter-list__btn",
+      "text": "0",
+      "params": {
+        "icon": "cart",
+        "canceler": " svg-ico_no_stroke"
+      }
+    },
+    "autorize": {
+      "className":"d-none d-md-flex d-xl-none",
+      "button": {
+        "icon": {
+          "id": "person",
+          "className": "c-btn__icon svg-ico_no_stroke"
+        },
+        "iconPosition": "before",
+        "iconWrapper": "svg-ico_wrapper_default",
+        "className": "c-btn c-btn_style_default c-btn_color_primary c-btn_size_sm inter-list__btn-autorize",
+        "text": "Личный кабинет",
+        "attrs": {
+          "href": "#"
+        }
+      }
+    }
+  },
+  "popupMenuArr": {
+    "interListArr": {
+      "favorite": {
+        "classNameBtn": "inter-list__btn inter-list__btn_size_sm",
+        "text": "0",
+        "params": {
+          "icon": "star",
+          "canceler": " svg-ico_no_stroke"
+        }
+      },
+      "comparison": {
+        "classNameBtn": "inter-list__btn inter-list__btn_size_sm",
+        "text": "0",
+        "params": {
+          "icon": "grid",
+          "canceler": " svg-ico_no_fill"
+        }
+      },
+      "autorize": {
+        "button": {
+          "icon": {
+            "id": "person",
+            "className": "c-btn__icon svg-ico_no_stroke"
+          },
+          "iconPosition": "before",
+          "iconWrapper": "svg-ico_wrapper_default",
+          "className": "c-btn c-btn_style_default c-btn_color_primary c-btn_size_xs m-auto",
+          "text": "Личный кабинет",
+          "attrs": {
+            "href": "#"
+          }
+        }
+      }
+    },
+    "searchForm": {},
+    "mainMenu": [
+      {
+        "classNameBtn": "c-btn_color_blue c-btn_size_md",
+        "text": "Каталог",
+        "params": {
+          "icon": "katalog",
+          "canceler": " svg-ico_no_stroke"
+        },
+        "acn": [
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Соединительные муфты"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Концевые муфты"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Переходные муфты"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Адаптеры"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Уплотнители кабельных проходов УКПТ"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Кабельные наконечники"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Кабельный инструмент"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Кабельные ролики"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Чулки для протяжки кабеля"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Материалы для кабельных работ"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Термоусаживаемые изделия"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Защита кабеля в земле"
+          },
+          {
+            "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+            "text": "Припой"
+          }
+        ]
+      },
+      {
+        "classNameBtn": "c-btn_color_blue c-btn_size_md",
+        "text": "О компании"
+      },
+      {
+        "classNameBtn": "c-btn_color_blue c-btn_size_md",
+        "text": "Доставка и оплата"
+      },
+      {
+        "classNameBtn": "c-btn_color_blue c-btn_size_md",
+        "text": "Библиотека"
+      },
+      {
+        "classNameBtn": "c-btn_color_blue c-btn_size_md",
+        "className": "p-0",
+        "text": "Контакты"
+      }
+    ],
+    "infoList": [
+      {
+        "text": "Офис/склад: Москва, ул. Стахановская, 8"
+      },
+      {
+        "text": "info@skala.ru"
+      },
+      {
+        "text": "+7 (499) 170-10-10"
+      }
+    ]
+  },
+  "popupMenuCatArr": {
+    "mainMenu": [
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Соединительные муфты"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Концевые муфты"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Переходные муфты"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Адаптеры"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Уплотнители кабельных проходов УКПТ"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Кабельные наконечники"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Кабельный инструмент"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Кабельные ролики"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Чулки для протяжки кабеля"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Материалы для кабельных работ"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Термоусаживаемые изделия"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Защита кабеля в земле"
+      },
+      {
+        "classNameBtn": "c-btn_color_primary c-btn_size_sm",
+        "text": "Припой"
+      }
+    ],
+    "infoList": [
+      {
+        "text": "Офис/склад: Москва, ул. Стахановская, 8"
+      },
+      {
+        "url": "tel:+74991701010",
+        "text": "+7 (499) 170-10-10"
+      },
+      {
+        "url": "mailto:info@skala.ru",
+        "text": "info@skala.ru"
+      }
+    ]
+  },
+  "linksMenusArr": [
+    {
+      "linksMenuArr": [
+        {
+          "head": "О компании",
+          "className": "links-menu_head pb-1"
+        },
+        {
+          "link": "Сертификаты"
+        },
+        {
+          "link": "Реквизиты"
+        },
+        {
+          "link": "Контакты"
+        }
+      ]
+    },
+    {
+      "linksMenuArr": [
+        {
+          "head": "Продажа",
+          "className": "pb-1"
+        },
+        {
+          "link": "Прайс-листы (Exel)"
+        },
+        {
+          "link": "Доставка и оплата"
+        },
+        {
+          "link": "Производители"
+        }
+      ]
+    },
+    {
+      "linksMenuArr": [
+        {
+          "head": "Новости",
+          "className": "links-menu_head pb-1"
+        },
+        {
+          "link": "Новости компании"
+        },
+        {
+          "link": "Статьи"
+        }
+      ]
+    },
+    {
+      "linksMenuArr": [
+        {
+          "head": "Новинки каталога",
+          "className": "links-menu_head"
+        }
+      ]
+    }
+  ],
+  "infoListArr": [
+    {
+      "text": "Офис/склад: Москва, ул. Стахановская, 8"
+    },
+    {
+      "text": "info@skala.ru"
+    },
+    {
+      "text": "+7 (499) 170-10-10"
+    }
+  ]
+}

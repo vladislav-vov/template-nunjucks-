@@ -1,0 +1,39 @@
+{% import "components/nav/links-menu/links-menu.njk" as linksMenu %}
+{% import "components/lists/info-list/info-list.njk" as infoList %}
+
+<footer class="c-footer">
+  <div class="container">
+    <div class="c-footer__main">
+      <div class="row">
+        <div class="col-12 col-xl-3">
+          <div class="c-footer__logo">
+            <a href="/" class="c-logo">
+              <img src="images/Logo.png" alt="" class="c-footer__img">
+            </a>
+          </div>
+        </div>
+        <div class="c-footer__aside col-12 col-xl-9">
+          <div class="row">
+            <div class="col-xl-12">
+              <nav class="c-footer__nav pb-2 pb-xl-3">
+                <div class="row">
+                  {% for item in linksMenusArr %}
+                  {{ linksMenu.default(item.linksMenuArr,
+                  {
+                  col: 'col-12 col-md-3 col-xl-3',
+                  loopindex: loop.index,
+                  isLastLoop: loop.last
+                  }) }}
+                  {% endfor %}
+                </div>
+              </nav>
+            </div>
+            <div class="c-footer__info col-xl-12">
+              {{ infoList.default(infoListArr) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

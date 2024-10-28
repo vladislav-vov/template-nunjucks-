@@ -1,0 +1,23 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default(array, params) %}
+
+  {% for item in array %}
+    <div class="action-list__item {{ item.className }}" {{ attrs | implode_attrs | safe }}>
+      <a class="action-list__item-btn" {{ attrs | implode_attrs | safe }}>
+        {% if item.params.icon %}
+          {{ mixins.icon(
+            {
+            className: 'main-menu__icon svg-ico' + item.params.canceler,
+            id: item.params.icon
+            }
+          ) }}
+        {% endif %}
+        <span class="action-list__item-text">
+          {{ item.title }}
+        </span>
+      </a>
+    </div>
+  {% endfor %}
+
+{% endmacro %}

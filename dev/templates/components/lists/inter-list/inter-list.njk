@@ -1,0 +1,40 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% import "components/controls/search/search.njk" as search %}
+{% import "components/controls/favorite/favorite.njk" as favorite %}
+{% import "components/controls/comparison/comparison.njk" as comparison %}
+{% import "components/controls/cart/cart.njk" as cart %}
+{% import "components/controls/button/button.njk" as button %}
+
+{% macro default(array, params) %}
+
+  <div class="inter-list">
+    {% if array.search %}
+      <div class="inter-list__item inter-list__item-search {{ array.search.className }}" {{ array.search.attr }}>
+        {{ search.button(array.search) }}
+      </div>
+    {% endif %}
+    <div class="inter-list__actions">
+      {% if array.favorite %}
+        <div class="inter-list__item {{ array.favorite.className }}" {{ array.favorite.attr }}>
+          {{ favorite.button(array.favorite) }}
+        </div>
+      {% endif %}
+      {% if array.comparison %}
+        <div class="inter-list__item {{ array.comparison.className }}" {{ array.comparison.attr }}>
+          {{ comparison.button(array.comparison) }}
+        </div>
+      {% endif %}
+      {% if array.cart %}
+        <div class="inter-list__item {{ array.cart.className }}" {{ array.cart.attr }}>
+          {{ cart.button(array.cart) }}
+        </div>
+      {% endif %}
+    </div>
+    {% if array.autorize %}
+      <div class="inter-list__item border-0 {{ array.autorize.className }}" {{ array.autorize.attr }}>
+        {{ button.default(array.autorize.button) }}
+      </div>
+    {% endif %}
+  </div>
+
+{% endmacro %}

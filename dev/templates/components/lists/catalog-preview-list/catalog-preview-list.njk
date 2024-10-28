@@ -1,0 +1,62 @@
+{% import "components/unsorted/product-card/product-card.njk" as productCard %}
+{% import "components/unsorted/category-card/category-card.njk" as categoryCard %}
+{% import "components/unsorted/info-card/info-card.njk" as infoCard %}
+{% import "components/unsorted/news-card/news-card.njk" as newsCard %}
+{% import "components/controls/button/button.njk" as button %}
+
+{% import "partials/_mixins.njk" as mixins %}
+
+{% macro default(array, params) %}
+
+  <div class="c-catalog-preview-list row">
+    <div class="col-12">
+      <div class="c-catalog-preview-list__head">
+        <div class="c-catalog-preview-list__title">
+          <h1 class="c-title c-title_md">{{ params.Title }}</h1>
+        </div>
+        <div class="c-catalog-preview-list__link">
+          {{ button.default(
+            {
+              className: 'c-btn c-btn_style_link c-btn_color_blue c-btn_size_xs catalog-head-btn',
+              text: params.textBtn,
+              attrs: {
+              href: '#'
+              }
+            }
+          ) }}
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="c-product-card__list row">
+        {% for item in array %}
+
+          {% if params.Type === "product" %}
+            {{ productCard.default(item,
+            {
+              loopindex: loop.index,
+              Type: params.Type,
+              className: 'product-card_default'
+            }) }}
+          {% endif %}
+
+          {% if params.Type === "category" %}
+            {{ categoryCard.default(item) }}
+          {% endif %}
+
+          {% if params.Type === "information" %}
+            {{ infoCard.default(item) }}
+          {% endif %}
+
+          {% if params.Type === "news" %}
+            {{ newsCard.default(item, {
+              linkMore: 'Подробнее'
+            }) }}
+          {% endif %}
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endmacro %}
